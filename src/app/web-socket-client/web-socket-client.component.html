@@ -1,0 +1,67 @@
+<section class="temperature-section">
+<div class="temperature-outer-border">
+   <div class="temperature-inner-border">
+      <div class = "display-wrapper" id="scroll-container">
+         <div class=" display1 display-container">
+            <div class="center-content">
+              <span [ngClass]=" receivedMessages? 'temperature-value' : 'hide-container'">{{ receivedMessages? receivedMessages.fahrenheit : '' }}</span> 
+                            
+              <div [ngClass]="receivedMessages? 'hide-container': 'loading-container'" > 
+
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 10 500 150" width="100%" height="100%">
+                  <rect fill="#FF7D05" stroke="#FF7D05" stroke-width="15" width="30" height="30" x="25" y="50" rx="15" ry="15" >
+                     <animate attributeName="y" calcMode="spline" dur="2" values="50;120;50;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4">
+                     </animate>
+                  </rect>
+                  <rect fill="#FF7D05" stroke="#FF7D05" stroke-width="15" width="30" height="30" x="85" y="50" rx="15" ry="15">
+                     <animate attributeName="y" calcMode="spline" dur="2" values="50;120;50;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2">
+                     </animate>
+                  </rect>
+                  <rect fill="#FF7D05" stroke="#FF7D05" stroke-width="15" width="30" height="30" x="145" y="50" rx="15" ry="15">
+                     <animate attributeName="y" calcMode="spline" dur="2" values="50;120;50;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0">
+                     </animate>
+                  </rect>
+               </svg>
+            </div>
+              <span class="temperature-symbol">°F</span>
+            </div>
+         </div>
+         <div class="display2 display-container">
+            <div class="center-content">
+               <span class="temperature-value ">{{ receivedMessages? receivedMessages.celsius : ''}}</span> 
+               <span class="temperature-symbol">°C</span>
+            </div>
+         </div>
+         <div  class="display3 display-container">
+            <div class="center-content">
+               <span class="temperature-value humidity">{{ receivedMessages?  receivedMessages.humidity : ''}}</span>
+               <span class="temperature-symbol">%</span>
+            </div>
+         </div>
+         <div class="display4 display-container">
+            <div class="center-content">
+               <h1>Swipe Back</h1>
+            </div>
+         </div>
+      </div>
+     
+      <div class="bottom-container">
+         <span class="dot dot1 "></span>
+         <span class="dot dot2 "  ></span>
+         <span class="dot dot3 " ></span>
+         <span class="dot dot4 "></span>
+      </div>
+ 
+   </div>
+</div>
+
+<div class="author">
+   <p>
+      Designed and Coded by 
+   </p>
+   <p>
+      Ashok Tamang
+   </p>
+</div>
+
+</section>
